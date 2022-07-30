@@ -31,15 +31,15 @@ app.use(ErrorHandler);
 const start = async () => {
   console.log(process.env.PORT);
 
-  /*try {
+  try {
     if (!process.env.MONGO_URI) {
       throw new DBConnectionError();
     }
 
-    await mongoose.connect("mongodb://localhost:27017/TestDB");
+    await mongoose.connect(process.env.MONGO_URI);
   } catch (err) {
     throw new DBConnectionError();
-  }*/
+  }
 
   app.listen(process.env.PORT || 4000, () => {
     console.log("App is running on port 4000!");
