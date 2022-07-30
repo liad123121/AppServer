@@ -29,6 +29,8 @@ app.all("*", () => {
 app.use(ErrorHandler);
 
 const start = async () => {
+  /*console.log(process.env.PORT);
+
   try {
     if (!process.env.MONGO_URI) {
       throw new DBConnectionError();
@@ -37,7 +39,7 @@ const start = async () => {
     await mongoose.connect(process.env.MONGO_URI);
   } catch (err) {
     throw new DBConnectionError();
-  }
+  }*/
 
   app.listen(process.env.PORT || 4000, () => {
     console.log("App is running on port 4000!");
